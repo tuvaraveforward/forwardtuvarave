@@ -1,0 +1,144 @@
+:root {
+    --bg: #f6f7f9;
+    --muted: #6b7280;
+    --accent: #0b6cff;
+    --sidebar: #eef2f6;
+    --text: #111827;
+    --max-width: 1100px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+}
+
+.cv {
+    max-width: var(--max-width);
+    margin: 32px auto;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* 1:3 vertical split */
+    gap: 24px;
+    padding: 24px;
+}
+
+.sidebar {
+    background: var(--sidebar);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.profile {
+    text-align: center
+}
+
+.profile-img {
+    width: 180px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    margin: 0 auto 12px auto;
+    display: block;
+}
+
+.name {
+    font-size: 1.4rem;
+    margin: 0
+}
+
+.role {
+    color: var(--muted);
+    margin: 6px 0 0
+}
+
+.sidebar h2 {
+    font-size: 0.95rem;
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.06)
+}
+
+.sidebar p,
+.sidebar li {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 4px 0
+}
+
+.sidebar ul {
+    padding-left: 18px;
+    margin: 6px 0
+}
+
+.main {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+.main section {
+    margin-bottom: 18px
+}
+
+.main h2 {
+    font-size: 1.05rem;
+    margin: 0 0 10px;
+    color: var(--accent)
+}
+
+.item {
+    margin-bottom: 12px
+}
+
+.item h3 {
+    margin: 0;
+    font-size: 1rem
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 6px
+}
+
+.summary p {
+    color: var(--muted);
+    margin: 0
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width:800px) {
+    .cv {
+        grid-template-columns: 1fr;
+        padding: 12px
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 150px
+    }
+}
+
+/* Minor print-friendly adjustments */
+@media print {
+    body {
+        background: white
+    }
+
+    .cv {
+        box-shadow: none
+    }
+}
